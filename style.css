@@ -1,0 +1,73 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #ff0a54 0%, #ff477e 50%, #930025 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 35px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    max-width: 85%;
+    animation: zoomIn 1.2s ease-out forwards;
+}
+
+
+.birthday-title {
+    color: #ffffff;
+    font-size: 2.8rem;
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    animation: heartbeat 1.5s infinite;
+}
+
+
+.message-box {
+    color: #ffe5ec;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* JS ကနေ ထည့်မယ့် အသည်းပုံ Class */
+.heart {
+    position: absolute;
+    color: rgba(255, 71, 126, 0.6);
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatHearts 6s linear infinite;
+}
+
+/* Animation Effects */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(100vh) scale(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.4; }
+    100% { transform: translateY(-10vh) scale(1.5) rotate(360deg); opacity: 0; }
+}
